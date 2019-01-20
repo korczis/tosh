@@ -2,15 +2,16 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
+
+// import 'bootstrap/dist/css/bootstrap.css';
 
 import { ToshRouter } from '../router'
 
 export const Root = ({ store, history }) => (
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <ToshRouter/>
+            <ToshRouter store={store} history={history} />
         </ConnectedRouter>
     </Provider>
 )

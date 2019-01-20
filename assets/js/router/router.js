@@ -11,7 +11,7 @@ export class ToshRouter extends Component {
             <Router>
                 <Switch>
                     {/* Root Route */}
-                    <Route exact path="/" component={App} />
+                    <Route exact path="/" render={(props) => <App {...this.props} />} />
 
                     {/* Explicit Routes */}
                     <Route path="/about" component={About} />

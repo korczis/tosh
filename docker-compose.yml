@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  db:
+  sql:
     image: postgres
     ports:
       - "5432:5432"
@@ -11,7 +11,7 @@ services:
   #   ports:
   #     - "443:8443"
   #   depends_on:
-  #     - db
+  #     - sql
   #   environment:
   #     - "PGADMIN_DEFAULT_PASSWORD=postgres"
 
@@ -30,4 +30,5 @@ services:
     ports:
       - "4000:4000"
     depends_on:
-      - db
+      - sql
+      - elk

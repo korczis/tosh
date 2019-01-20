@@ -14,7 +14,7 @@ import "phoenix_html"
 import { routerMiddleware } from 'connected-react-router'
 import React from 'react'
 import { render } from 'react-dom'
-import { createBrowserHistory, createHashHistory } from 'history'
+import { createBrowserHistory } from 'history'
 
 import { applyMiddleware, compose, createStore } from 'redux'
 import thunkMiddleware from 'redux-thunk'
@@ -50,8 +50,10 @@ export default function configureStore(preloadedState) {
 
     const composedEnhancers = composeEnhancer(...enhancers)
 
+    const rootReducer = createRootReducer(history)
+
     const store = createStore(
-        createRootReducer(history), // root reducer with router state
+        rootReducer, // root reducer with router state
         preloadedState,
         composedEnhancers
     )
