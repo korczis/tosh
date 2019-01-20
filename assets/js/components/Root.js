@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 
-// import 'bootstrap/dist/css/bootstrap.css';
-
 import { ToshRouter } from '../router'
 
 export const Root = ({ store, history }) => (
