@@ -5,18 +5,12 @@ import { Provider } from 'react-redux'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ConnectedRouter } from 'connected-react-router'
 
-// import App from './App'
+import { ToshRouter } from '../router'
 
 export const Root = ({ store, history }) => (
     <Provider store={store}>
         <ConnectedRouter history={history}>
-            <Router >
-                <Switch>
-                    <Route exact path="/" render={() => (<div>Match</div>)} />
-                    <Route path="/123" render={() => (<div>One, Two, Three</div>)} />
-                    <Route render={() => (<div>Miss</div>)} />
-                </Switch>
-            </Router>
+            <ToshRouter/>
         </ConnectedRouter>
     </Provider>
 )
