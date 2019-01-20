@@ -11,7 +11,27 @@ import css from "../css/app.css"
 //
 import "phoenix_html"
 
+import ReactDOM from 'react-dom'
+import React from 'react'
+
 // Import local files
 //
 // Local files can be imported directly using relative paths, for example:
-// import socket from "./socket"
+import socket from "./socket"
+
+class HelloMessage extends React.Component {
+    render() {
+        return (
+            <div>
+                Hello {this.props.name}
+            </div>
+        );
+    }
+}
+
+ReactDOM.render(
+    <HelloMessage name="Taylor" />,
+
+    document.getElementById('tosh-spa')
+);
+
